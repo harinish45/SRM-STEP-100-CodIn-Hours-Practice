@@ -1,49 +1,44 @@
-import java.util.Scanner;
-
 public class UniqueCharacters {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a string: ");
-        String text = sc.nextLine();
-        sc.close();
-
-        int len = findLength(text);
-        char[] uniqueChars = findUniqueChars(text, len);
-
-        System.out.print("Unique Characters: ");
-        for (char c : uniqueChars) {
-            if (c != '\0') System.out.print(c + " ");
-        }
-    }
-
-    public static int findLength(String s) {
+    public static int getLength(String text) {
         int count = 0;
         try {
             while (true) {
-                s.charAt(count);
+                text.charAt(count);
                 count++;
             }
-        } catch (IndexOutOfBoundsException e) {
+        } catch (Exception e) {
             return count;
         }
     }
 
-    public static char[] findUniqueChars(String s, int len) {
+    public static char[] getUniqueCharacters(String text) {
+        int len = getLength(text);
         char[] unique = new char[len];
-        int index = 0;
+        int idx = 0;
         for (int i = 0; i < len; i++) {
-            char c = s.charAt(i);
-            boolean isUnique = true;
+            char ch = text.charAt(i);
+            boolean found = false;
             for (int j = 0; j < i; j++) {
-                if (s.charAt(j) == c) {
-                    isUnique = false;
+                if (text.charAt(j) == ch) {
+                    found = true;
                     break;
                 }
             }
-            if (isUnique) {
-                unique[index++] = c;
+            if (!found) {
+                unique[idx++] = ch;
             }
         }
-        return unique;
+        char[] result = new char[idx];
+        System.arraycopy(unique, 0, result, 0, idx);
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String input = "programming";
+        char[] unique = getUniqueCharacters(input);
+        System.out.print("Unique characters: ");
+        for (char c : unique) {
+            System.out.print(c + " ");
+        }
     }
 }
