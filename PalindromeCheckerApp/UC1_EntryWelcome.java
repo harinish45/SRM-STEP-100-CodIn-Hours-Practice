@@ -1,3 +1,5 @@
+package PalindromeCheckerApp;
+
 /**
  * UC1: Application Entry & Welcome Message
  *
