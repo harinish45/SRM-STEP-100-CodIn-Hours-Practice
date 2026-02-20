@@ -80,6 +80,7 @@ public class ParkingLot {
                 continue; // Wait, actually standard linear probe stops at null.
             }
 
+            if (spots[idx].licensePlate.equals(licensePlate)) {
                 // Found it
                 // long duration = System.currentTimeMillis() - spots[idx].entryTime;
                 // Mock duration 2h 15m
@@ -104,7 +105,7 @@ public class ParkingLot {
             }
         }
 
-    return"Vehicle not found";
+        return "Vehicle not found";
 
     }
 
