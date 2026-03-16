@@ -1,0 +1,53 @@
+<svg fill="none" viewBox="0 0 800 220" width="800" height="220" xmlns="http://www.w3.org/2000/svg">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+.wrap{width:800px;height:220px;background:#050510;padding:18px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden;position:relative}
+.wrap::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,255,245,0.015) 3px,rgba(0,255,245,0.015) 6px);pointer-events:none}
+.sec-head{font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(0,255,245,0.5);letter-spacing:4px;text-transform:uppercase;border-bottom:1px solid rgba(0,255,245,0.1);padding-bottom:6px}
+.cards{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.card{background:rgba(0,255,245,0.03);border:1px solid rgba(0,255,245,0.12);border-radius:3px;padding:10px 8px;text-align:center;position:relative;overflow:hidden;animation:cardIn .6s ease-out both}
+@keyframes cardIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.card:nth-child(1){animation-delay:.1s}.card:nth-child(2){animation-delay:.2s}.card:nth-child(3){animation-delay:.3s}.card:nth-child(4){animation-delay:.4s}.card:nth-child(5){animation-delay:.5s}.card:nth-child(6){animation-delay:.6s}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;animation:accentPulse 3s ease-in-out infinite}
+.card:nth-child(1)::before,.card:nth-child(4)::before{background:#00fff5;box-shadow:0 0 8px #00fff5;animation-delay:0s}
+.card:nth-child(2)::before,.card:nth-child(5)::before{background:#ff00ff;box-shadow:0 0 8px #ff00ff;animation-delay:.5s}
+.card:nth-child(3)::before,.card:nth-child(6)::before{background:#39ff14;box-shadow:0 0 8px #39ff14;animation-delay:1s}
+@keyframes accentPulse{0%,100%{opacity:.7}50%{opacity:1;box-shadow:0 0 12px currentColor}}
+.ci{font-size:20px;margin-bottom:6px}
+.ct{font-family:'Orbitron',monospace;font-size:8px;color:#00fff5;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;text-shadow:0 0 6px #00fff588}
+.tags{display:flex;flex-wrap:wrap;gap:3px;justify-content:center}
+.tag{font-family:'Share Tech Mono',monospace;font-size:8px;color:rgba(255,255,255,0.45);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:1px 5px;border-radius:2px}
+.skills-row{display:flex;flex-direction:column;gap:6px}
+.sb{display:flex;align-items:center;gap:10px}
+.sb-name{font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:1px;min-width:130px}
+.sb-track{flex:1;height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden}
+.sb-fill{height:100%;border-radius:2px}
+.sb-fill.c{background:linear-gradient(90deg,#00fff5,#ff00ff);animation:barIn 2s ease-out both}
+.sb-fill.g{background:linear-gradient(90deg,#39ff14,#00fff5);animation:barIn 2s ease-out .2s both}
+.sb-fill.m{background:linear-gradient(90deg,#ff00ff,#ff6b00);animation:barIn 2s ease-out .4s both}
+@keyframes barIn{from{width:0 !important}to{width:var(--w)}}
+</style>
+<div class="wrap">
+  <div class="sec-head">[02] DOMAINS.exe ─────────────────────────────────────────────────────</div>
+  <div class="cards">
+    <div class="card"><div class="ci">🧠</div><div class="ct">Data Structures</div><div class="tags"><span class="tag">HashMap</span><span class="tag">LRU</span><span class="tag">Trees</span><span class="tag">Heap</span></div></div>
+    <div class="card"><div class="ci">🏗</div><div class="ct">System Design</div><div class="tags"><span class="tag">LB</span><span class="tag">Circuit</span><span class="tag">Queue</span><span class="tag">Cache</span></div></div>
+    <div class="card"><div class="ci">🔐</div><div class="ct">Cyber Utils</div><div class="tags"><span class="tag">Auth</span><span class="tag">Hash</span><span class="tag">JWT</span><span class="tag">Logs</span></div></div>
+    <div class="card"><div class="ci">🕸</div><div class="ct">Graph & Net</div><div class="tags"><span class="tag">Dijkstra</span><span class="tag">DFS</span><span class="tag">Topo</span></div></div>
+    <div class="card"><div class="ci">🧪</div><div class="ct">Mini Apps</div><div class="tags"><span class="tag">Scanner</span><span class="tag">Logger</span><span class="tag">CLI</span></div></div>
+    <div class="card"><div class="ci">⚡</div><div class="ct">Algorithms</div><div class="tags"><span class="tag">DP</span><span class="tag">D&amp;C</span><span class="tag">Greedy</span></div></div>
+  </div>
+  <div class="skills-row">
+    <div class="sb"><span class="sb-name">JAVA</span><div class="sb-track"><div class="sb-fill c" style="--w:90%;width:90%"></div></div></div>
+    <div class="sb"><span class="sb-name">CYBERSECURITY</span><div class="sb-track"><div class="sb-fill g" style="--w:85%;width:85%"></div></div></div>
+    <div class="sb"><span class="sb-name">DSA + ALGORITHMS</span><div class="sb-track"><div class="sb-fill m" style="--w:80%;width:80%"></div></div></div>
+    <div class="sb"><span class="sb-name">SYSTEM DESIGN</span><div class="sb-track"><div class="sb-fill c" style="--w:72%;width:72%"></div></div></div>
+    <div class="sb"><span class="sb-name">ETHICAL HACKING / CTF</span><div class="sb-track"><div class="sb-fill g" style="--w:78%;width:78%"></div></div></div>
+  </div>
+</div>
+</div>
+</foreignObject>
+</svg>

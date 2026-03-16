@@ -1,0 +1,69 @@
+<svg fill="none" viewBox="0 0 800 320" width="800" height="320" xmlns="http://www.w3.org/2000/svg">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@900&family=Rajdhani:wght@600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+.wrap{width:800px;height:320px;background:linear-gradient(135deg,#050510 0%,#0a0a2e 50%,#050510 100%);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,245,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,245,0.07) 1px,transparent 1px);background-size:40px 40px;animation:gridMove 8s linear infinite}
+@keyframes gridMove{0%{background-position:0 0}100%{background-position:40px 40px}}
+.glow-l{position:absolute;left:-60px;top:50%;transform:translateY(-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(255,0,255,0.18) 0%,transparent 70%);animation:pulse 3s ease-in-out infinite}
+.glow-r{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(0,255,245,0.18) 0%,transparent 70%);animation:pulse 3s ease-in-out infinite 1.5s}
+@keyframes pulse{0%,100%{opacity:.6;transform:translateY(-50%) scale(1)}50%{opacity:1;transform:translateY(-50%) scale(1.15)}}
+.scanline{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,255,245,0.018) 3px,rgba(0,255,245,0.018) 6px);pointer-events:none}
+.title-wrap{position:relative;z-index:2}
+.title{font-family:'Orbitron',monospace;font-size:78px;font-weight:900;letter-spacing:10px;text-transform:uppercase;line-height:1;animation:titleFlicker 6s ease-in-out infinite}
+@keyframes titleFlicker{0%,95%,100%{opacity:1}96%{opacity:.85}97%{opacity:1}98%{opacity:.9}99%{opacity:1}}
+.t-c{color:#00fff5;text-shadow:0 0 10px #00fff5,0 0 30px #00fff5aa,0 0 60px #00fff555}
+.t-m{color:#ff00ff;text-shadow:0 0 10px #ff00ff,0 0 30px #ff00ffaa,0 0 60px #ff00ff55}
+.glitch{position:absolute;top:0;left:0;width:100%;font-family:'Orbitron',monospace;font-size:78px;font-weight:900;letter-spacing:10px;text-transform:uppercase;line-height:1}
+.g1{color:#ff00ff;opacity:.35;animation:glitch1 4s infinite}
+.g2{color:#00fff5;opacity:.25;animation:glitch2 3.5s infinite .5s}
+@keyframes glitch1{0%,90%,100%{clip-path:none;transform:none}91%{clip-path:inset(30% 0 50% 0);transform:translate(-3px,0)}93%{clip-path:inset(70% 0 10% 0);transform:translate(3px,0)}95%{clip-path:none;transform:none}}
+@keyframes glitch2{0%,88%,100%{clip-path:none;transform:none}89%{clip-path:inset(60% 0 20% 0);transform:translate(4px,0)}91%{clip-path:inset(10% 0 70% 0);transform:translate(-4px,0)}93%{clip-path:none;transform:none}}
+.sub{font-family:'Share Tech Mono',monospace;font-size:14px;letter-spacing:5px;color:#ff00ff;text-shadow:0 0 8px #ff00ff88;margin-top:10px;animation:subIn 1.2s ease-out both;position:relative;z-index:2}
+@keyframes subIn{from{opacity:0;letter-spacing:12px}to{opacity:1;letter-spacing:5px}}
+.line{width:600px;height:1px;background:linear-gradient(90deg,transparent,#00fff5,#ff00ff,transparent);margin:14px auto;position:relative;z-index:2;animation:lineGrow 1.5s ease-out both}
+@keyframes lineGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.typing-box{background:rgba(0,255,245,0.05);border:1px solid rgba(0,255,245,0.2);border-radius:3px;padding:8px 20px;font-family:'Share Tech Mono',monospace;font-size:13px;color:#00fff5;position:relative;z-index:2;margin-top:4px}
+.typed{overflow:hidden;white-space:nowrap;border-right:2px solid #00fff5;animation:typing 3s steps(50) infinite,blink .7s step-end infinite}
+@keyframes typing{0%{width:0}40%{width:100%}60%{width:100%}80%{width:0}100%{width:0}}
+@keyframes blink{0%,100%{border-color:#00fff5}50%{border-color:transparent}}
+.corner{position:absolute;width:24px;height:24px;z-index:3}
+.tl{top:10px;left:10px;border-top:2px solid #00fff5;border-left:2px solid #00fff5}
+.tr{top:10px;right:10px;border-top:2px solid #ff00ff;border-right:2px solid #ff00ff}
+.bl{bottom:10px;left:10px;border-bottom:2px solid #ff00ff;border-left:2px solid #ff00ff}
+.br{bottom:10px;right:10px;border-bottom:2px solid #00fff5;border-right:2px solid #00fff5}
+.particle{position:absolute;border-radius:50%;animation:float linear infinite}
+@keyframes float{0%{transform:translateY(100%) translateX(0);opacity:0}10%{opacity:.8}90%{opacity:.4}100%{transform:translateY(-100%) translateX(30px);opacity:0}}
+</style>
+<div class="wrap">
+  <div class="grid"></div>
+  <div class="glow-l"></div>
+  <div class="glow-r"></div>
+  <div class="scanline"></div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+  <div style="position:absolute;left:60px;top:40px;width:4px;height:4px;background:#00fff5;border-radius:50%;box-shadow:0 0 6px #00fff5;animation:float 4s linear infinite"></div>
+  <div style="position:absolute;left:200px;top:80px;width:3px;height:3px;background:#ff00ff;border-radius:50%;box-shadow:0 0 5px #ff00ff;animation:float 5s linear infinite 1s"></div>
+  <div style="position:absolute;right:80px;top:50px;width:3px;height:3px;background:#39ff14;border-radius:50%;box-shadow:0 0 5px #39ff14;animation:float 3.5s linear infinite 2s"></div>
+  <div style="position:absolute;right:200px;top:100px;width:4px;height:4px;background:#00fff5;border-radius:50%;box-shadow:0 0 6px #00fff5;animation:float 6s linear infinite .5s"></div>
+  <div style="position:absolute;left:350px;top:20px;width:2px;height:2px;background:#ff00ff;border-radius:50%;box-shadow:0 0 4px #ff00ff;animation:float 4.5s linear infinite 3s"></div>
+  <div class="title-wrap">
+    <div style="position:relative">
+      <div class="glitch g1"><span style="color:#ff00ff">HARI</span><span style="color:#00fff5">NISH</span></div>
+      <div class="glitch g2"><span style="color:#00fff5">HARI</span><span style="color:#ff00ff">NISH</span></div>
+      <div class="title"><span class="t-c">HARI</span><span class="t-m">NISH</span></div>
+    </div>
+  </div>
+  <div class="sub">◈ COLLEGE CODE LAB ◈ JAVA × CYBER × DSA ◈</div>
+  <div class="line"></div>
+  <div class="typing-box">
+    <div class="typed">⚡ Where DSA meets real attack surfaces · Every commit = a weapon deployed</div>
+  </div>
+</div>
+</div>
+</foreignObject>
+</svg>

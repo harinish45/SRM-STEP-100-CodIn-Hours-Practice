@@ -1,0 +1,25 @@
+<svg fill="none" viewBox="0 0 800 100" width="800" height="100" xmlns="http://www.w3.org/2000/svg">
+<foreignObject width="100%" height="100%">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+.wrap{width:800px;height:100px;background:linear-gradient(0deg,#050510,rgba(5,5,16,0.8));border-top:1px solid rgba(0,255,245,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden}
+.wave{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#00fff5,#ff00ff,#39ff14,transparent);background-size:200% 100%;animation:waveMove 3s linear infinite}
+@keyframes waveMove{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.cmd{font-family:'Share Tech Mono',monospace;font-size:12px;color:rgba(255,255,255,0.7)}
+.cmd .prompt{color:#39ff14}.cmd .txt{color:#00fff5}.cmd .str{color:#ff00ff}
+.sub{font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:3px;text-transform:uppercase}
+.cursor{display:inline-block;width:7px;height:13px;background:#00fff5;animation:blink .7s step-end infinite;vertical-align:middle;margin-left:1px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+</style>
+<div class="wrap">
+  <div class="wave"></div>
+  <div class="cmd">
+    <span class="prompt">root@harinish</span>:<span style="color:#ff00ff">~/college-codes</span>$ git add . &amp;&amp; git commit -m <span class="str">"⚡ another weapon deployed"</span> &amp;&amp; git push<span class="cursor"></span>
+  </div>
+  <div class="sub">built at srmist · ra2411030010137 · tamil nadu, india 🇮🇳</div>
+</div>
+</div>
+</foreignObject>
+</svg>
