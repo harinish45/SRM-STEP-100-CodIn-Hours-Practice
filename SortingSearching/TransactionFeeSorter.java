@@ -1,7 +1,7 @@
 package SortingSearching;
 
 import java.util.*;
-import java.io.*;
+
 
 // Problem 1: Transaction Fee Sorting for Audit Compliance
 class Transaction {
@@ -107,10 +107,10 @@ public class TransactionFeeSorter {
         System.out.println();
 
         // Bubble Sort (for small batches ≤ 100)
-        List<Transaction> bubbleSorted = bubbleSortByFee(transactions);
+        bubbleSortByFee(transactions);
 
         // Insertion Sort (for medium batches 100-1000)
-        List<Transaction> insertionSorted = insertionSortByFeeAndTimestamp(transactions);
+        insertionSortByFeeAndTimestamp(transactions);
 
         // High-fee outliers
         List<Transaction> outliers = findHighFeeOutliers(transactions);

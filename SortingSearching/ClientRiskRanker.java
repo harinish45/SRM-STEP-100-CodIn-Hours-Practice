@@ -89,10 +89,10 @@ public class ClientRiskRanker {
         System.out.println("Input: [clientC:80, clientA:20, clientB:50]");
 
         // Bubble Sort ascending
-        Client[] bubbleSorted = bubbleSortAscending(clients);
+        bubbleSortAscending(clients);
 
         // Insertion Sort descending
-        Client[] insertionSorted = insertionSortDescending(clients);
+        insertionSortDescending(clients);
 
         // Top 3 highest risk clients
         Client[] top3 = getTopRiskClients(clients, 3);

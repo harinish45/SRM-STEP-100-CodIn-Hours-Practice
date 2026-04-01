@@ -1,0 +1,22 @@
+﻿git : fatal: path 'Week 
+03 & 04 Problem 
+Statements/Problem1.txt' 
+exists on disk, but not 
+in '9121fb0'
+At line:1 char:143
++ ...  6; $i++) { git 
+show "9121fb0:Week 03 & 
+04 Problem 
+Statements/Problem ...
++                 ~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (f  
+  atal: path 'We...ot i   
+ n '9121fb0':String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
