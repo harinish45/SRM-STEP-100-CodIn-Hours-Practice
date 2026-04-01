@@ -19,97 +19,106 @@ Linear: threshold=30 → not found (4 comps)
 Binary floor(30): 25, ceiling: 50 (3 comps)
 */
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Problem6 {
-    // Linear Search unsorted risk bands for threshold match
     public static int linearSearch(int[] risks, int threshold) {
-        int comparisons = 0;
         for (int i = 0; i < risks.length; i++) {
-            comparisons++;
             if (risks[i] == threshold) {
-                System.out.println("Linear: threshold=" + threshold + " → found at index " + i + " (" + comparisons + " comps)");
                 return i;
             }
         }
-        System.out.println("Linear: threshold=" + threshold + " → not found (" + comparisons + " comps)");
         return -1;
     }
 
-    // Binary Search sorted bands to find insertion point for new client
-    // Returns the index where the threshold would be inserted to maintain sorted order
-    public static int binarySearchInsertionPoint(int[] risks, int threshold) {
+    public static int linearSearchWithComparisons(int[] risks, int threshold) {
+        for (int i = 0; i < risks.length; i++) {
+            if (risks[i] == threshold) {
+                return i + 1;
+            }
+        }
+        return risks.length;
+    }
+
+    public static int binarySearchInsertionPoint(int[] sortedBands, int target) {
         int low = 0;
-        int high = risks.length;
-        int comparisons = 0;
+        int high = sortedBands.length;
         while (low < high) {
-            comparisons++;
             int mid = (low + high) / 2;
-            if (risks[mid] < threshold) {
+            if (sortedBands[mid] < target) {
                 low = mid + 1;
             } else {
                 high = mid;
             }
         }
-        System.out.println("Binary insertion point for " + threshold + ": index " + low + " (" + comparisons + " comps)");
         return low;
     }
 
-    // Find floor value (largest ≤ target)
-    public static int floor(int[] risks, int target) {
+    public static int binarySearchWithComparisons(int[] sortedBands, int target) {
         int low = 0;
-        int high = risks.length - 1;
-        int result = -1;
+        int high = sortedBands.length - 1;
         int comparisons = 0;
         while (low <= high) {
             comparisons++;
             int mid = (low + high) / 2;
-            if (risks[mid] <= target) {
-                result = risks[mid];
-                low = mid + 1; // look for larger value that is still <= target
+            if (sortedBands[mid] == target) {
+                return comparisons;
+            } else if (sortedBands[mid] < target) {
+                low = mid + 1;
             } else {
                 high = mid - 1;
             }
         }
-        System.out.println("Binary floor(" + target + "): " + result + " (" + comparisons + " comps)");
-        return result;
+        return comparisons;
     }
 
-    // Find ceiling value (smallest ≥ target)
-    public static int ceiling(int[] risks, int target) {
-        int low = 0;
-        int high = risks.length - 1;
+    public static Integer findFloor(int[] sortedBands, int target) {
         int result = -1;
-        int comparisons = 0;
+        int low = 0;
+        int high = sortedBands.length - 1;
         while (low <= high) {
-            comparisons++;
             int mid = (low + high) / 2;
-            if (risks[mid] >= target) {
-                result = risks[mid];
-                high = mid - 1; // look for smaller value that is still >= target
+            if (sortedBands[mid] <= target) {
+                result = sortedBands[mid];
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return result == -1 ? null : result;
+    }
+
+    public static Integer findCeiling(int[] sortedBands, int target) {
+        int result = -1;
+        int low = 0;
+        int high = sortedBands.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (sortedBands[mid] >= target) {
+                result = sortedBands[mid];
+                high = mid - 1;
             } else {
                 low = mid + 1;
             }
         }
-        System.out.println("Binary ceiling(" + target + "): " + result + " (" + comparisons + " comps)");
-        return result;
+        return result == -1 ? null : result;
     }
 
     public static void main(String[] args) {
-        int[] risks = {10, 25, 50, 100};
+        int[] sortedRisks = {10, 25, 50, 100};
         int threshold = 30;
 
         System.out.println("Sorted risks: [10, 25, 50, 100]");
 
-        // Linear Search unsorted risk bands for threshold match
-        linearSearch(risks, threshold);
+        int linearResult = linearSearch(sortedRisks, threshold);
+        int linearComps = linearSearchWithComparisons(sortedRisks, threshold);
+        System.out.println("Linear: threshold=" + threshold + " → " +
+                (linearResult >= 0 ? "found at " + linearResult : "not found") +
+                " (" + linearComps + " comps)");
 
-        // Binary Search sorted bands to find insertion point for new client
-        binarySearchInsertionPoint(risks, threshold);
+        Integer floor = findFloor(sortedRisks, threshold);
+        Integer ceiling = findCeiling(sortedRisks, threshold);
+        int binaryComps = binarySearchWithComparisons(sortedRisks, threshold);
 
-        // Find floor/ceiling values
-        floor(risks, threshold);
-        ceiling(risks, threshold);
+        System.out.println("Binary floor(" + threshold + "): " + floor +
+                ", ceiling: " + ceiling + " (" + binaryComps + " comps)");
     }
 }

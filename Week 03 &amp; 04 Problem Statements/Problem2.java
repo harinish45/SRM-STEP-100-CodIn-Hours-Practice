@@ -46,7 +46,6 @@ class Client {
 }
 
 public class Problem2 {
-    // Bubble Sort for riskScore ascending
     public static void bubbleSortByRiskScoreAsc(Client[] clients) {
         int n = clients.length;
         int swaps = 0;
@@ -55,7 +54,6 @@ public class Problem2 {
             swapped = false;
             for (int j = 0; j < n - i - 1; j++) {
                 if (clients[j].riskScore > clients[j + 1].riskScore) {
-                    // swap
                     Client temp = clients[j];
                     clients[j] = clients[j + 1];
                     clients[j + 1] = temp;
@@ -73,19 +71,12 @@ public class Problem2 {
         System.out.println("] // Swaps: " + swaps);
     }
 
-    // Insertion Sort for riskScore DESC + accountBalance
-    // Primary sort: riskScore descending
-    // Secondary sort: accountBalance ascending (for equal riskScores)
-    public static void insertionSortByRiskScoreDescThenBalanceAsc(Client[] clients) {
+    public static void insertionSortByRiskScoreDesc(Client[] clients) {
         int n = clients.length;
         for (int i = 1; i < n; i++) {
             Client key = clients[i];
             int j = i - 1;
-            // Move elements of clients[0..i-1] that have smaller riskScore than key,
-            // or equal riskScore but accountBalance greater than key (to maintain stability)
-            while (j >= 0 && 
-                   (clients[j].riskScore < key.riskScore || 
-                    (clients[j].riskScore == key.riskScore && clients[j].accountBalance > key.accountBalance))) {
+            while (j >= 0 && clients[j].riskScore < key.riskScore) {
                 clients[j + 1] = clients[j];
                 j--;
             }
@@ -99,7 +90,6 @@ public class Problem2 {
         System.out.println("]");
     }
 
-    // Identify top k highest risk clients post-sort
     public static List<Client> getTopKRiskClients(Client[] clients, int k) {
         List<Client> topClients = new ArrayList<>();
         int limit = Math.min(k, clients.length);
@@ -118,17 +108,12 @@ public class Problem2 {
 
         System.out.println("Input: [clientC:80, clientA:20, clientB:50]");
 
-        // Make copies for each sort
         Client[] bubbleClients = clients.clone();
-        Client[] insertionClients = clients.clone();
-
-        System.out.print("Bubble (asc): ");
         bubbleSortByRiskScoreAsc(bubbleClients);
 
-        System.out.print("Insertion (desc): ");
-        insertionSortByRiskScoreDescThenBalanceAsc(insertionClients);
+        Client[] insertionClients = clients.clone();
+        insertionSortByRiskScoreDesc(insertionClients);
 
-        // For top risks, we'll use the insertion sorted array (descending order)
         List<Client> top3 = getTopKRiskClients(insertionClients, 3);
         System.out.print("Top 3 risks: ");
         for (int i = 0; i < top3.size(); i++) {

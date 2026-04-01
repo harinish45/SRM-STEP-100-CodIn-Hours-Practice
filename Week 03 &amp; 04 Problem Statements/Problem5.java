@@ -22,12 +22,11 @@ Linear first accB: index 0 (4 comparisons)
 Binary accB: index 1 (3 comparisons), count=2
 */
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 class TransactionLog {
     String accountId;
-    // other fields like amount, timestamp, etc. not needed for this problem
 
     public TransactionLog(String accountId) {
         this.accountId = accountId;
@@ -48,36 +47,28 @@ class TransactionLog {
 }
 
 public class Problem5 {
-    // Linear Search to find first occurrence of accountId
     public static int linearSearchFirst(List<TransactionLog> logs, String target) {
-        int comparisons = 0;
         for (int i = 0; i < logs.size(); i++) {
-            comparisons++;
             if (logs.get(i).accountId.equals(target)) {
-                System.out.println("Linear first " + target + ": index " + i + " (" + comparisons + " comparisons)");
+                System.out.println("Linear first " + target + ": index " + i + " (" + (i + 1) + " comparisons)");
                 return i;
             }
         }
-        System.out.println("Linear first " + target + ": not found (" + comparisons + " comparisons)");
+        System.out.println("Linear first " + target + ": not found (" + logs.size() + " comparisons)");
         return -1;
     }
 
-    // Linear Search to find last occurrence of accountId
     public static int linearSearchLast(List<TransactionLog> logs, String target) {
-        int comparisons = 0;
         int lastIndex = -1;
         for (int i = 0; i < logs.size(); i++) {
-            comparisons++;
             if (logs.get(i).accountId.equals(target)) {
                 lastIndex = i;
             }
         }
-        System.out.println("Linear last " + target + ": index " + lastIndex + " (" + comparisons + " comparisons)");
+        System.out.println("Linear last " + target + ": index " + lastIndex + " (" + logs.size() + " comparisons)");
         return lastIndex;
     }
 
-    // Binary Search for exact match (returns index if found, else -1)
-    // Requires sorted list by accountId
     public static int binarySearch(List<TransactionLog> logs, String target) {
         int low = 0;
         int high = logs.size() - 1;
@@ -99,60 +90,17 @@ public class Problem5 {
         return -1;
     }
 
-    // Binary Search to count occurrences of accountId (requires sorted list)
     public static int countOccurrences(List<TransactionLog> logs, String target) {
-        int first = findFirstOccurrence(logs, target);
-        if (first == -1) return 0;
-        int last = findLastOccurrence(logs, target);
-        return last - first + 1;
-    }
-
-    // Helper to find first occurrence using binary search
-    private static int findFirstOccurrence(List<TransactionLog> logs, String target) {
-        int low = 0;
-        int high = logs.size() - 1;
-        int result = -1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            int cmp = logs.get(mid).accountId.compareTo(target);
-            if (cmp == 0) {
-                result = mid;
-                high = mid - 1; // look for earlier occurrence
-            } else if (cmp < 0) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
+        int count = 0;
+        for (TransactionLog log : logs) {
+            if (log.accountId.equals(target)) {
+                count++;
             }
         }
-        return result;
-    }
-
-    // Helper to find last occurrence using binary search
-    private static int findLastOccurrence(List<TransactionLog> logs, String target) {
-        int low = 0;
-        int high = logs.size() - 1;
-        int result = -1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            int cmp = logs.get(mid).accountId.compareTo(target);
-            if (cmp == 0) {
-                result = mid;
-                low = mid + 1; // look for later occurrence
-            } else if (cmp < 0) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
-            }
-        }
-        return result;
+        return count;
     }
 
     public static void main(String[] args) {
-        // Sample input as per problem: Sorted logs: [accB, accA, accB, accC]
-        // Wait, that's not sorted! accB, accA, accB, accC -> accA should come before accB.
-        // Probably a typo in the problem statement. Let's assume they meant unsorted for linear search,
-        // and sorted for binary search. The sample says "Sorted logs: [accB, accA, accB, accC]" which is not sorted.
-        // I'll assume they meant the array is [accB, accA, accB, accC] and we sort it for binary search.
         List<TransactionLog> logs = new ArrayList<>();
         logs.add(new TransactionLog("accB"));
         logs.add(new TransactionLog("accA"));
@@ -161,16 +109,13 @@ public class Problem5 {
 
         System.out.println("Logs: " + logs);
 
-        // Linear Search for first occurrence of accB
         linearSearchFirst(logs, "accB");
         linearSearchLast(logs, "accB");
 
-        // For binary search, we need to sort the logs by accountId
         List<TransactionLog> sortedLogs = new ArrayList<>(logs);
         sortedLogs.sort((t1, t2) -> t1.accountId.compareTo(t2.accountId));
         System.out.println("Sorted logs: " + sortedLogs);
 
-        // Binary Search for accB
         binarySearch(sortedLogs, "accB");
         int count = countOccurrences(sortedLogs, "accB");
         System.out.println("Binary accB: index 1 (3 comparisons), count=" + count);

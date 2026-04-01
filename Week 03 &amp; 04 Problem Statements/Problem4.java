@@ -22,8 +22,8 @@ Quick (desc): [GOOG:15%, AAPL:12%, TSLA:8%]
 
 class Asset {
     String symbol;
-    double returnRate; // as percentage, e.g., 12.0 for 12%
-    double volatility; // as percentage
+    double returnRate;
+    double volatility;
 
     public Asset(String symbol, double returnRate, double volatility) {
         this.symbol = symbol;
@@ -38,11 +38,8 @@ class Asset {
 }
 
 public class Problem4 {
-    // Merge Sort assets by returnRate (preserve original order for ties) - stable sort
     public static void mergeSortByReturnRateAsc(Asset[] assets) {
-        if (assets == null || assets.length < 2) {
-            return;
-        }
+        if (assets == null || assets.length < 2) return;
         Asset[] temp = new Asset[assets.length];
         mergeSortByReturnRateAsc(assets, temp, 0, assets.length - 1);
         System.out.print("Merge: [");
@@ -54,9 +51,7 @@ public class Problem4 {
     }
 
     private static void mergeSortByReturnRateAsc(Asset[] assets, Asset[] temp, int leftStart, int rightEnd) {
-        if (leftStart >= rightEnd) {
-            return;
-        }
+        if (leftStart >= rightEnd) return;
         int middle = (leftStart + rightEnd) / 2;
         mergeSortByReturnRateAsc(assets, temp, leftStart, middle);
         mergeSortByReturnRateAsc(assets, temp, middle + 1, rightEnd);
@@ -73,8 +68,7 @@ public class Problem4 {
         int index = leftStart;
 
         while (left <= leftEnd && right <= rightEnd) {
-            // For stability, if return rates are equal, we take from left first
-            if (assets[left].returnRate < assets[right].returnRate || 
+            if (assets[left].returnRate < assets[right].returnRate ||
                 (assets[left].returnRate == assets[right].returnRate && left <= right)) {
                 temp[index] = assets[left];
                 left++;
@@ -90,14 +84,9 @@ public class Problem4 {
         System.arraycopy(temp, leftStart, assets, leftStart, size);
     }
 
-    // Quick Sort by returnRate DESC + volatility ASC
-    // Primary: returnRate descending
-    // Secondary: volatility ascending (for equal returnRates)
-    public static void quickSortByReturnRateDescThenVolatilityAsc(Asset[] assets) {
-        if (assets == null || assets.length < 2) {
-            return;
-        }
-        quickSortByReturnRateDescThenVolatilityAsc(assets, 0, assets.length - 1);
+    public static void quickSortByReturnRateDesc(Asset[] assets) {
+        if (assets == null || assets.length < 2) return;
+        quickSortByReturnRateDesc(assets, 0, assets.length - 1);
         System.out.print("Quick (desc): [");
         for (int i = 0; i < assets.length; i++) {
             System.out.print(assets[i]);
@@ -106,23 +95,20 @@ public class Problem4 {
         System.out.println("]");
     }
 
-    private static void quickSortByReturnRateDescThenVolatilityAsc(Asset[] assets, int low, int high) {
-        // Use insertion sort for small partitions (hybrid approach)
+    private static void quickSortByReturnRateDesc(Asset[] assets, int low, int high) {
         if (high - low + 1 <= 10) {
-            insertionSortByReturnRateDescThenVolatilityAsc(assets, low, high);
+            insertionSortByReturnRateDesc(assets, low, high);
             return;
         }
         if (low < high) {
             int pivotIndex = partition(assets, low, high);
-            quickSortByReturnRateDescThenVolatilityAsc(assets, low, pivotIndex - 1);
-            quickSortByReturnRateDescThenVolatilityAsc(assets, pivotIndex + 1, high);
+            quickSortByReturnRateDesc(assets, low, pivotIndex - 1);
+            quickSortByReturnRateDesc(assets, pivotIndex + 1, high);
         }
     }
 
     private static int partition(Asset[] assets, int low, int high) {
-        // Using median-of-three for pivot selection based on returnRate
         int mid = low + (high - low) / 2;
-        // Order low, mid, high by returnRate (descending for pivot selection logic)
         if (assets[low].returnRate < assets[mid].returnRate) {
             swap(assets, low, mid);
         }
@@ -132,16 +118,12 @@ public class Problem4 {
         if (assets[mid].returnRate < assets[high].returnRate) {
             swap(assets, mid, high);
         }
-        // Now mid has the median returnRate, swap with high to use as pivot
         swap(assets, mid, high);
-        
+
         Asset pivot = assets[high];
         int i = low - 1;
         for (int j = low; j < high; j++) {
-            // For primary sort: returnRate descending (greater returnRate comes first)
-            // For secondary sort: if returnRate equal, volatility ascending (lower volatility comes first)
-            if (assets[j].returnRate > pivot.returnRate || 
-                (assets[j].returnRate == pivot.returnRate && assets[j].volatility < pivot.volatility)) {
+            if (assets[j].returnRate > pivot.returnRate) {
                 i++;
                 swap(assets, i, j);
             }
@@ -150,15 +132,11 @@ public class Problem4 {
         return i + 1;
     }
 
-    private static void insertionSortByReturnRateDescThenVolatilityAsc(Asset[] assets, int low, int high) {
+    private static void insertionSortByReturnRateDesc(Asset[] assets, int low, int high) {
         for (int i = low + 1; i <= high; i++) {
             Asset key = assets[i];
             int j = i - 1;
-            // Move elements of assets[low..i-1] that have smaller returnRate than key,
-            // or equal returnRate but greater volatility than key (to maintain stability for equal both)
-            while (j >= low && 
-                   (assets[j].returnRate < key.returnRate || 
-                    (assets[j].returnRate == key.returnRate && assets[j].volatility > key.volatility))) {
+            while (j >= low && assets[j].returnRate < key.returnRate) {
                 assets[j + 1] = assets[j];
                 j--;
             }
@@ -181,14 +159,10 @@ public class Problem4 {
 
         System.out.println("Input: [AAPL:12%, TSLA:8%, GOOG:15%]");
 
-        // Make copies for each sort
         Asset[] mergeAssets = assets.clone();
-        Asset[] quickAssets = assets.clone();
-
-        System.out.print("Merge: ");
         mergeSortByReturnRateAsc(mergeAssets);
 
-        System.out.print("Quick (desc): ");
-        quickSortByReturnRateDescThenVolatilityAsc(quickAssets);
+        Asset[] quickAssets = assets.clone();
+        quickSortByReturnRateDesc(quickAssets);
     }
 }

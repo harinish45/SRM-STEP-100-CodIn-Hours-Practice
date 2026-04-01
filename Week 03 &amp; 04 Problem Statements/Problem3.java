@@ -43,11 +43,8 @@ class Trade {
 }
 
 public class Problem3 {
-    // Merge Sort for volume ascending (stable)
     public static void mergeSortAsc(Trade[] trades) {
-        if (trades == null || trades.length < 2) {
-            return;
-        }
+        if (trades == null || trades.length < 2) return;
         Trade[] temp = new Trade[trades.length];
         mergeSortAsc(trades, temp, 0, trades.length - 1);
         System.out.print("MergeSort: [");
@@ -59,9 +56,7 @@ public class Problem3 {
     }
 
     private static void mergeSortAsc(Trade[] trades, Trade[] temp, int leftStart, int rightEnd) {
-        if (leftStart >= rightEnd) {
-            return;
-        }
+        if (leftStart >= rightEnd) return;
         int middle = (leftStart + rightEnd) / 2;
         mergeSortAsc(trades, temp, leftStart, middle);
         mergeSortAsc(trades, temp, middle + 1, rightEnd);
@@ -93,11 +88,8 @@ public class Problem3 {
         System.arraycopy(temp, leftStart, trades, leftStart, size);
     }
 
-    // Quick Sort for volume descending (in-place)
     public static void quickSortDesc(Trade[] trades) {
-        if (trades == null || trades.length < 2) {
-            return;
-        }
+        if (trades == null || trades.length < 2) return;
         quickSortDesc(trades, 0, trades.length - 1);
         System.out.print("QuickSort (desc): [");
         for (int i = 0; i < trades.length; i++) {
@@ -116,9 +108,7 @@ public class Problem3 {
     }
 
     private static int partition(Trade[] trades, int low, int high) {
-        // Using median-of-three for better pivot selection
         int mid = low + (high - low) / 2;
-        // Order low, mid, high
         if (trades[low].volume < trades[mid].volume) {
             swap(trades, low, mid);
         }
@@ -128,13 +118,11 @@ public class Problem3 {
         if (trades[mid].volume < trades[high].volume) {
             swap(trades, mid, high);
         }
-        // Now mid has the median, swap with high to use as pivot
         swap(trades, mid, high);
-        
+
         Trade pivot = trades[high];
         int i = low - 1;
         for (int j = low; j < high; j++) {
-            // For descending order, we want elements greater than pivot to come first
             if (trades[j].volume >= pivot.volume) {
                 i++;
                 swap(trades, i, j);
@@ -150,12 +138,9 @@ public class Problem3 {
         trades[j] = temp;
     }
 
-    // Merge two sorted trade lists (e.g., morning/afternoon sessions)
     public static Trade[] mergeSortedLists(Trade[] list1, Trade[] list2) {
         Trade[] merged = new Trade[list1.length + list2.length];
         int i = 0, j = 0, k = 0;
-        
-        // Both lists are assumed to be sorted in ascending order by volume
         while (i < list1.length && j < list2.length) {
             if (list1[i].volume <= list2[j].volume) {
                 merged[k++] = list1[i++];
@@ -163,24 +148,14 @@ public class Problem3 {
                 merged[k++] = list2[j++];
             }
         }
-        
-        while (i < list1.length) {
-            merged[k++] = list1[i++];
-        }
-        
-        while (j < list2.length) {
-            merged[k++] = list2[j++];
-        }
-        
+        while (i < list1.length) merged[k++] = list1[i++];
+        while (j < list2.length) merged[k++] = list2[j++];
         return merged;
     }
 
-    // Compute total volume post-sort
     public static int computeTotalVolume(Trade[] trades) {
         int total = 0;
-        for (Trade t : trades) {
-            total += t.volume;
-        }
+        for (Trade t : trades) total += t.volume;
         return total;
     }
 
@@ -193,17 +168,12 @@ public class Problem3 {
 
         System.out.println("Input: [trade3:500, trade1:100, trade2:300]");
 
-        // Make copies for each sort
         Trade[] mergeTrades = trades.clone();
-        Trade[] quickTrades = trades.clone();
-
-        System.out.print("MergeSort: ");
         mergeSortAsc(mergeTrades);
 
-        System.out.print("QuickSort (desc): ");
+        Trade[] quickTrades = trades.clone();
         quickSortDesc(quickTrades);
 
-        // Example of merging two sorted lists (morning/afternoon sessions)
         Trade[] morning = {new Trade("m1", 100), new Trade("m2", 200)};
         Trade[] afternoon = {new Trade("a1", 150), new Trade("a2", 350)};
         Trade[] merged = mergeSortedLists(morning, afternoon);
@@ -213,7 +183,7 @@ public class Problem3 {
             if (i < merged.length - 1) System.out.print(", ");
         }
         System.out.println("]");
-        
+
         int totalVolume = computeTotalVolume(merged);
         System.out.println("Merged morning+afternoon total: " + totalVolume);
     }
