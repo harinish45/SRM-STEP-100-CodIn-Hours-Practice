@@ -1,3 +1,5 @@
+package Year1;
+
 public class Reservation {
 
     private String guestName;

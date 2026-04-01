@@ -1,4 +1,4 @@
-package PalindromeCheckerApp;
+package Year1.PalindromeCheckerApp;
 
 /**
  * UC2: Print a Hardcoded Palindrome Result

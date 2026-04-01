@@ -1,4 +1,4 @@
-package SortingSearching;
+package Year1.SortingSearching;
 
 // Problem 3: Historical Trade Volume Analysis
 class Trade {

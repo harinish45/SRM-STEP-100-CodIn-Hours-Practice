@@ -1,4 +1,4 @@
-package SortingSearching;
+package Year1.SortingSearching;
 
 // Problem 5: Account ID Lookup in Transaction Logs
 public class AccountIdLookup {

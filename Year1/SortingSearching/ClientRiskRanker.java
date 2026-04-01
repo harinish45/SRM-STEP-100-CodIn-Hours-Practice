@@ -1,4 +1,4 @@
-package SortingSearching;
+package Year1.SortingSearching;
 
 // Problem 2: Client Risk Score Ranking
 class Client {

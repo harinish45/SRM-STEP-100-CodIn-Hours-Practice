@@ -1,4 +1,4 @@
-package SortingSearching;
+package Year1.SortingSearching;
 
 import java.util.*;
 

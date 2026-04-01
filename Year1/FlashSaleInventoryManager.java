@@ -1,3 +1,5 @@
+package Year1;
+
 import java.util.*;
 
 // Problem 2: E-commerce Flash Sale Inventory Manager

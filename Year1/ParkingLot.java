@@ -1,3 +1,5 @@
+package Year1;
+
 public class ParkingLot {
     static class Entry {
         String licensePlate;

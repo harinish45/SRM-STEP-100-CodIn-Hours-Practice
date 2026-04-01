@@ -1,4 +1,4 @@
-package SortingSearching;
+package Year1.SortingSearching;
 
 // Problem 6: Risk Threshold Binary Lookup
 public class RiskThresholdLookup {

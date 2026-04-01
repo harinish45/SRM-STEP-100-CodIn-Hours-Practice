@@ -1,3 +1,5 @@
+package Year1;
+
 /**
  * UseCase1HotelBookingApp
  * Demonstrates application entry and welcome message

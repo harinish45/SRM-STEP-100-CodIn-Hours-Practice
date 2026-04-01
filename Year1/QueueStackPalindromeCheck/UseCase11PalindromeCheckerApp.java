@@ -1,4 +1,4 @@
-package QueueStackPalindromeCheck;
+package Year1.QueueStackPalindromeCheck;
 
 /**
  * =========================================================
