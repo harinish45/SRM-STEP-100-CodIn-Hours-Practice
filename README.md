@@ -1,79 +1,100 @@
-# 🎓 SRM Semester 3 - 100 Coding Hours Practice
+# SRM Semester 3 — 100 Coding Hours Practice
 
-[![Java](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.oracle.com/java/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Active-green.svg)]()
-
-> A comprehensive collection of Java solutions from SRM Semester 3 – 100 Coding Hours Practice, demonstrating problem-solving skills and core programming concepts aligned with the CSE Cybersecurity curriculum.
+**Language:** Java &nbsp;|&nbsp; **Curriculum:** CSE Cybersecurity &nbsp;|&nbsp; **Status:** Active
 
 ---
 
-## 📚 Table of Contents
+## Overview
 
-- [Overview](#overview)
-- [Project Structure](#project-structure)
-- [Year 2 Solutions](#year-2-solutions)
-  - [Palindrome Checker App](#palindrome-checker-app)
-  - [Queue & Stack Palindrome Check](#queue--stack-palindrome-check)
-  - [Sorting & Searching](#sorting--searching)
-  - [Core Data Structures](#core-data-structures)
-- [BookMyStayApp Solutions](#bookmystayapp-solutions)
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
+This repository contains Java implementations of programming problems and real-world applications developed during SRM Semester 3 coding practice sessions. Solutions demonstrate proficiency in data structures, algorithms, object-oriented design, and problem-solving.
 
 ---
 
-## 📖 Overview
-
-This repository contains Java implementations of various programming problems and real-world applications developed during the SRM Semester 3 coding practice sessions. Each solution demonstrates proficiency in:
-
-- 🔹 **Data Structures**: Arrays, Linked Lists, Stacks, Queues, Trees, Hash Maps
-- 🔹 **Algorithms**: Sorting, Searching, Recursion, Dynamic Programming
-- 🔹 **Object-Oriented Design**: Encapsulation, Inheritance, Polymorphism
-- 🔹 **Problem Solving**: Logical thinking and algorithmic approach
-
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 SRM-STEP-100-CodIn-Hours-Practice/
-├── 📂 Year2/                          # Year 2 Advanced Solutions
-│   ├── 🔤 PalindromeCheckerApp/       # Palindrome checking implementations
-│   ├── 📊 QueueStackPalindromeCheck/  # Queue & Stack based solutions
-│   ├── 🔍 SortingSearching/           # Sorting and searching algorithms
-│   └── 🏗️ Core Data Structure Files    # Individual problem solutions
 │
-├── 📂 BookMyStayApp/                  # Hotel Booking System
-│   ├── 🔤 PalindromeCheckerApp/
-│   ├── 📊 QueueStackPalindromeCheck/
-│   └── 🏨 UseCase Implementations/    # UC1 - UC12
+├── Year2/                              # All Year 2 solutions
+│   │
+│   ├── PalindromeCheckerApp/           # Palindrome checking (UC1-UC5)
+│   │   ├── UC1_EntryWelcome.java
+│   │   ├── UC2_HardcodedPalindromeChecker.java
+│   │   ├── UC3_StringReversePalindromeChecker.java
+│   │   ├── UC4_CharArrayPalindromeChecker.java
+│   │   └── UC5_StackPalindromeChecker.java
+│   │
+│   ├── QueueStackPalindromeCheck/      # Queue & Stack solutions (UC6-UC13)
+│   │   ├── UseCase6PalindromeCheckerApp.java
+│   │   ├── UseCase7PalindromeCheckerApp.java
+│   │   ├── UseCase8PalindromeCheckerApp.java
+│   │   ├── UseCase9PalindromeCheckerApp.java
+│   │   ├── UseCase10PalindromeCheckerApp.java
+│   │   ├── UseCase11PalindromeCheckerApp.java
+│   │   ├── UseCase12PalindromeCheckerApp.java
+│   │   └── UseCase13PalindromeCheckerApp.java
+│   │
+│   ├── SortingSearching/               # Sorting & Searching algorithms
+│   │   ├── AccountIdLookup.java
+│   │   ├── ClientRiskRanker.java
+│   │   ├── PortfolioReturnSorter.java
+│   │   ├── RiskThresholdLookup.java
+│   │   ├── TradeVolumeSorter.java
+│   │   └── TransactionFeeSorter.java
+│   │
+│   ├── BookMyStayApp/                  # Hotel Booking Management System
+│   │   ├── UseCase1HotelBookingApp.java
+│   │   ├── UseCase2BasicRoomTypes.java
+│   │   ├── UseCase3CentralizedInventory.java
+│   │   ├── UseCase4RoomSearchAvailability.java
+│   │   ├── UseCase5BookingRequestQueue.java
+│   │   ├── UseCase6RoomAllocation.java
+│   │   ├── UseCase7AddOnServiceSelection.java
+│   │   ├── UseCase8BookingHistoryReport.java
+│   │   ├── UseCase9ErrorHandlingValidation.java
+│   │   ├── UseCase10BookingCancellation.java
+│   │   ├── UseCase11ConcurrentBookingSimulation.java
+│   │   └── UseCase12DataPersistenceRecovery.java
+│   │
+│   ├── ExercismSolutions/              # Additional practice solutions
+│   │
+│   └── [Core Data Structure Files]     # Individual implementations
+│       ├── AnalyticsDashboard.java
+│       ├── AutocompleteSystem.java
+│       ├── BookingHistory.java
+│       ├── BookingReportService.java
+│       ├── DNSCache.java
+│       ├── FlashSaleInventoryManager.java
+│       ├── InventoryManager.java
+│       ├── MultiLevelCache.java
+│       ├── ParkingLot.java
+│       ├── PlagiarismDetector.java
+│       ├── RateLimiter.java
+│       ├── Reservation.java
+│       ├── SocialMedia.java
+│       ├── TransactionAnalyzer.java
+│       ├── UseCase1HotelBookingApp.java
+│       ├── UseCase8BookingHistoryReport.java
+│       └── UsernameAvailabilityChecker.java
 │
-├── 📂 ExercismSolutions/              # Additional practice solutions
-│
-└── 📄 README.md                       # This file
+└── README.md
 ```
 
 ---
 
-## 🎯 Year 2 Solutions
+## Year 2 Solutions
 
-### 🔤 Palindrome Checker App
+### Palindrome Checker App (UC1-UC5)
 
-A comprehensive palindrome checking application with multiple implementation approaches:
-
-| Use Case | Description | Algorithm |
-|----------|-------------|-----------|
-| UC1 | Application Entry & Welcome | Basic I/O |
+| Use Case | Description | Key Concept |
+|----------|-------------|-------------|
+| UC1 | Application Entry & Welcome | Basic I/O, main method |
 | UC2 | Hardcoded Palindrome Checker | String comparison |
 | UC3 | String Reverse Checker | Loop-based reversal |
 | UC4 | Character Array Checker | Two-pointer technique |
 | UC5 | Stack-Based Checker | LIFO data structure |
 
-### 📊 Queue & Stack Palindrome Check
-
-Advanced palindrome validation using various data structures:
+### Queue & Stack Palindrome Check (UC6-UC13)
 
 | Use Case | Description | Data Structure |
 |----------|-------------|----------------|
@@ -86,41 +107,37 @@ Advanced palindrome validation using various data structures:
 | UC12 | Strategy Pattern | Algorithm interchangeability |
 | UC13 | Performance Comparison | Benchmarking |
 
-### 🔍 Sorting & Searching
-
-Efficient sorting and searching implementations:
+### Sorting & Searching
 
 | Problem | Description | Technique |
 |---------|-------------|-----------|
-| Account ID Lookup | Find account IDs in logs | Linear & Binary Search |
-| Client Risk Ranker | Rank clients by risk score | Bubble & Insertion Sort |
-| Trade Volume Sorter | Sort trade volumes | Merge & Quick Sort |
-| Portfolio Return Sorter | Sort by return rate | Stable sorting |
-| Transaction Fee Sorter | Sort fees for audit | Batch sorting |
-| Risk Threshold Lookup | Binary threshold search | Floor/Ceiling functions |
+| AccountIdLookup | Find account IDs in logs | Linear & Binary Search |
+| ClientRiskRanker | Rank clients by risk score | Bubble & Insertion Sort |
+| TradeVolumeSorter | Sort trade volumes | Merge & Quick Sort |
+| PortfolioReturnSorter | Sort by return rate | Stable sorting |
+| TransactionFeeSorter | Sort fees for audit | Batch sorting |
+| RiskThresholdLookup | Binary threshold search | Floor/Ceiling functions |
 
-### 🏗️ Core Data Structures
+### Core Data Structures
 
-Individual implementations showcasing various concepts:
-
-- **AnalyticsDashboard** - Real-time analytics with concurrent updates
-- **AutocompleteSystem** - Trie-based search suggestions
-- **BookingHistory** - Reservation tracking system
-- **DNSCache** - LRU cache with TTL support
-- **FlashSaleInventoryManager** - Thread-safe inventory management
-- **InventoryManager** - Lock-free concurrent inventory
-- **MultiLevelCache** - L1/L2/L3 cache hierarchy
-- **ParkingLot** - Hash table with linear probing
-- **PlagiarismDetector** - N-gram based similarity detection
-- **RateLimiter** - Token bucket rate limiting
-- **SocialMedia** - Username availability checker
-- **TransactionAnalyzer** - K-Sum and duplicate detection
+- **AnalyticsDashboard** — Real-time analytics with concurrent updates
+- **AutocompleteSystem** — Trie-based search suggestions
+- **BookingHistory** — Reservation tracking system
+- **DNSCache** — LRU cache with TTL support
+- **FlashSaleInventoryManager** — Thread-safe inventory management
+- **InventoryManager** — Lock-free concurrent inventory
+- **MultiLevelCache** — L1/L2/L3 cache hierarchy
+- **ParkingLot** — Hash table with linear probing
+- **PlagiarismDetector** — N-gram based similarity detection
+- **RateLimiter** — Token bucket rate limiting
+- **SocialMedia** — Username availability checker
+- **TransactionAnalyzer** — K-Sum and duplicate detection
 
 ---
 
-## 🏨 BookMyStayApp Solutions
+## BookMyStayApp — Hotel Booking System
 
-A complete hotel booking management system with 12 use cases:
+A complete hotel booking management system:
 
 | Use Case | Feature | Description |
 |----------|---------|-------------|
@@ -139,12 +156,12 @@ A complete hotel booking management system with 12 use cases:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- **Java Development Kit (JDK)** 11 or higher
-- **Git** for version control
+- Java Development Kit (JDK) 11 or higher
+- Git for version control
 
 ### Installation
 
@@ -152,68 +169,50 @@ A complete hotel booking management system with 12 use cases:
 # Clone the repository
 git clone https://github.com/harinish45/SRM-STEP-100-CodIn-Hours-Practice.git
 
-# Navigate to the project directory
+# Navigate to project directory
 cd SRM-STEP-100-CodIn-Hours-Practice
-
-# Compile and run any Java file
-javac Year2/PalindromeCheckerApp/UC1_EntryWelcome.java
-java Year2.PalindromeCheckerApp.UC1_EntryWelcome
 ```
 
-### Running Specific Solutions
+### Running Solutions
 
 ```bash
-# Run Palindrome Checker
-java Year2.PalindromeCheckerApp.UC3_StringReversePalindromeChecker
+# Compile and run Palindrome Checker
+javac Year2/PalindromeCheckerApp/UC1_EntryWelcome.java
+java Year2.PalindromeCheckerApp.UC1_EntryWelcome
 
 # Run Hotel Booking App
-java BookMyStayApp.UseCase1HotelBookingApp
+javac Year2/BookMyStayApp/UseCase1HotelBookingApp.java
+java Year2.BookMyStayApp.UseCase1HotelBookingApp
 
 # Run Sorting Algorithms
+javac Year2/SortingSearching/TradeVolumeSorter.java
 java Year2.SortingSearching.TradeVolumeSorter
 ```
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
+## Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create a feature branch: `git checkout -b feature/AmazingFeature`
+3. Commit changes: `git commit -m 'Add AmazingFeature'`
+4. Push to branch: `git push origin feature/AmazingFeature`
 5. Open a Pull Request
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Harinish S V**
 
-[![GitHub](https://img.shields.io/badge/GitHub-harinish45-lightgrey?style=social&logo=github)](https://github.com/harinish45)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Harinish-blue?style=social&logo=linkedin)]()
+- GitHub: [@harinish45](https://github.com/harinish45)
 
 ---
 
-## 📊 Project Statistics
-
-[![Lines of Code](https://img.shields.io/tokei/lines/github/harinish45/SRM-STEP-100-CodIn-Hours-Practice)]()
-[![Files](https://img.shields.io/github/directory-file-count/harinish45/SRM-STEP-100-CodIn-Hours-Practice)]()
-[![Last Commit](https://img.shields.io/github/last-commit/harinish45/SRM-STEP-100-CodIn-Hours-Practice)]()
-
----
-
-<div align="center">
-
-**⭐ If you find this repository helpful, please give it a star!**
-
-Made with ❤️ by Harinish S V
-
-</div>
+*Last updated: April 2026*
