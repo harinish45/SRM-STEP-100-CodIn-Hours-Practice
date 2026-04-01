@@ -15,69 +15,67 @@ This repository contains Java implementations of programming problems and real-w
 ```
 SRM-STEP-100-CodIn-Hours-Practice/
 │
-├── Year2/                              # All Year 2 solutions
-│   │
-│   ├── PalindromeCheckerApp/           # Palindrome checking (UC1-UC5)
-│   │   ├── UC1_EntryWelcome.java
-│   │   ├── UC2_HardcodedPalindromeChecker.java
-│   │   ├── UC3_StringReversePalindromeChecker.java
-│   │   ├── UC4_CharArrayPalindromeChecker.java
-│   │   └── UC5_StackPalindromeChecker.java
-│   │
-│   ├── QueueStackPalindromeCheck/      # Queue & Stack solutions (UC6-UC13)
-│   │   ├── UseCase6PalindromeCheckerApp.java
-│   │   ├── UseCase7PalindromeCheckerApp.java
-│   │   ├── UseCase8PalindromeCheckerApp.java
-│   │   ├── UseCase9PalindromeCheckerApp.java
-│   │   ├── UseCase10PalindromeCheckerApp.java
-│   │   ├── UseCase11PalindromeCheckerApp.java
-│   │   ├── UseCase12PalindromeCheckerApp.java
-│   │   └── UseCase13PalindromeCheckerApp.java
-│   │
-│   ├── SortingSearching/               # Sorting & Searching algorithms
-│   │   ├── AccountIdLookup.java
-│   │   ├── ClientRiskRanker.java
-│   │   ├── PortfolioReturnSorter.java
-│   │   ├── RiskThresholdLookup.java
-│   │   ├── TradeVolumeSorter.java
-│   │   └── TransactionFeeSorter.java
-│   │
-│   ├── BookMyStayApp/                  # Hotel Booking Management System
-│   │   ├── UseCase1HotelBookingApp.java
-│   │   ├── UseCase2BasicRoomTypes.java
-│   │   ├── UseCase3CentralizedInventory.java
-│   │   ├── UseCase4RoomSearchAvailability.java
-│   │   ├── UseCase5BookingRequestQueue.java
-│   │   ├── UseCase6RoomAllocation.java
-│   │   ├── UseCase7AddOnServiceSelection.java
-│   │   ├── UseCase8BookingHistoryReport.java
-│   │   ├── UseCase9ErrorHandlingValidation.java
-│   │   ├── UseCase10BookingCancellation.java
-│   │   ├── UseCase11ConcurrentBookingSimulation.java
-│   │   └── UseCase12DataPersistenceRecovery.java
-│   │
-│   ├── ExercismSolutions/              # Additional practice solutions
-│   │
-│   └── [Core Data Structure Files]     # Individual implementations
-│       ├── AnalyticsDashboard.java
-│       ├── AutocompleteSystem.java
-│       ├── BookingHistory.java
-│       ├── BookingReportService.java
-│       ├── DNSCache.java
-│       ├── FlashSaleInventoryManager.java
-│       ├── InventoryManager.java
-│       ├── MultiLevelCache.java
-│       ├── ParkingLot.java
-│       ├── PlagiarismDetector.java
-│       ├── RateLimiter.java
-│       ├── Reservation.java
-│       ├── SocialMedia.java
-│       ├── TransactionAnalyzer.java
-│       ├── UseCase1HotelBookingApp.java
-│       ├── UseCase8BookingHistoryReport.java
-│       └── UsernameAvailabilityChecker.java
-│
-└── README.md
+└── Year2/                              # All Year 2 solutions
+    │
+    ├── PalindromeCheckerApp/           # Palindrome checking (UC1-UC5)
+    │   ├── UC1_EntryWelcome.java
+    │   ├── UC2_HardcodedPalindromeChecker.java
+    │   ├── UC3_StringReversePalindromeChecker.java
+    │   ├── UC4_CharArrayPalindromeChecker.java
+    │   └── UC5_StackPalindromeChecker.java
+    │
+    ├── QueueStackPalindromeCheck/      # Queue & Stack solutions (UC6-UC13)
+    │   ├── UseCase6PalindromeCheckerApp.java
+    │   ├── UseCase7PalindromeCheckerApp.java
+    │   ├── UseCase8PalindromeCheckerApp.java
+    │   ├── UseCase9PalindromeCheckerApp.java
+    │   ├── UseCase10PalindromeCheckerApp.java
+    │   ├── UseCase11PalindromeCheckerApp.java
+    │   ├── UseCase12PalindromeCheckerApp.java
+    │   └── UseCase13PalindromeCheckerApp.java
+    │
+    ├── Week 03 & 04 Problem Statements/ # Sorting & Searching Solutions
+    │   ├── AccountIdLookup.java
+    │   ├── ClientRiskRanker.java
+    │   ├── PortfolioReturnSorter.java
+    │   ├── RiskThresholdLookup.java
+    │   ├── TradeVolumeSorter.java
+    │   └── TransactionFeeSorter.java
+    │
+    ├── BookMyStayApp/                  # Hotel Booking Management System
+    │   ├── UseCase1HotelBookingApp.java
+    │   ├── UseCase2BasicRoomTypes.java
+    │   ├── UseCase3CentralizedInventory.java
+    │   ├── UseCase4RoomSearchAvailability.java
+    │   ├── UseCase5BookingRequestQueue.java
+    │   ├── UseCase6RoomAllocation.java
+    │   ├── UseCase7AddOnServiceSelection.java
+    │   ├── UseCase8BookingHistoryReport.java
+    │   ├── UseCase9ErrorHandlingValidation.java
+    │   ├── UseCase10BookingCancellation.java
+    │   ├── UseCase11ConcurrentBookingSimulation.java
+    │   └── UseCase12DataPersistenceRecovery.java
+    │
+    ├── ExercismSolutions/              # Additional practice solutions
+    │
+    └── [Core Data Structure Files]     # Individual implementations
+        ├── AnalyticsDashboard.java
+        ├── AutocompleteSystem.java
+        ├── BookingHistory.java
+        ├── BookingReportService.java
+        ├── DNSCache.java
+        ├── FlashSaleInventoryManager.java
+        ├── InventoryManager.java
+        ├── MultiLevelCache.java
+        ├── ParkingLot.java
+        ├── PlagiarismDetector.java
+        ├── RateLimiter.java
+        ├── Reservation.java
+        ├── SocialMedia.java
+        ├── TransactionAnalyzer.java
+        ├── UseCase1HotelBookingApp.java
+        ├── UseCase8BookingHistoryReport.java
+        └── UsernameAvailabilityChecker.java
 ```
 
 ---
@@ -107,7 +105,7 @@ SRM-STEP-100-CodIn-Hours-Practice/
 | UC12 | Strategy Pattern | Algorithm interchangeability |
 | UC13 | Performance Comparison | Benchmarking |
 
-### Sorting & Searching
+### Week 03 & 04 Problem Statements — Sorting & Searching
 
 | Problem | Description | Technique |
 |---------|-------------|-----------|
@@ -185,8 +183,8 @@ javac Year2/BookMyStayApp/UseCase1HotelBookingApp.java
 java Year2.BookMyStayApp.UseCase1HotelBookingApp
 
 # Run Sorting Algorithms
-javac Year2/SortingSearching/TradeVolumeSorter.java
-java Year2.SortingSearching.TradeVolumeSorter
+javac "Year2/Week 03 & 04 Problem Statements/TradeVolumeSorter.java"
+java Year2.Week03_04ProblemStatements.TradeVolumeSorter
 ```
 
 ---
