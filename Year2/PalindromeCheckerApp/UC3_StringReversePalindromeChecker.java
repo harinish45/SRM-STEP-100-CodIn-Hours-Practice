@@ -1,4 +1,4 @@
-package Year2.PalindromeCheckerApp;
+package PalindromeCheckerApp;
 
 import java.util.Scanner;
 

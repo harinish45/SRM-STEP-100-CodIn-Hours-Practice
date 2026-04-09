@@ -1,4 +1,4 @@
-package Year2.PalindromeCheckerApp;
+package PalindromeCheckerApp;
 
 /**
  * UC1: Application Entry & Welcome Message

@@ -1,4 +1,4 @@
-package Year2.QueueStackPalindromeCheck;
+package PalindromeCheckerApp;
 
 /**
  * =========================================================

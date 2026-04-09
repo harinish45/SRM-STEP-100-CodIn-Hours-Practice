@@ -1,4 +1,3 @@
-package Year2;
 
 /**
  * UseCase1HotelBookingApp
