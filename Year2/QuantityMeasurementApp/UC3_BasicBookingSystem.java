@@ -1,4 +1,4 @@
-package HotelBookingSystem;
+package QuantityMeasurementApp;
 
 import java.util.ArrayList;
 import java.util.Date;

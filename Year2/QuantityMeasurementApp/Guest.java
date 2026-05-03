@@ -1,4 +1,4 @@
-package HotelBookingSystem;
+package QuantityMeasurementApp;
 
 public class Guest {
     private String guestId;

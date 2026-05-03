@@ -1,4 +1,4 @@
-package HotelBookingSystem;
+package QuantityMeasurementApp;
 
 public class Room {
     private int roomNumber;
