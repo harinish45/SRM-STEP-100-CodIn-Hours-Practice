@@ -84,7 +84,7 @@
 
 ```bash
 # ── CLONE ────────────────────────────────────────────────────
-git clone https://github.com/harinish45/<repo-name>.git && cd <repo-name>
+git clone https://github.com/harinish45/SRM-STEP-100-CodIn-Hours-Practice.git && cd SRM-STEP-100-CodIn-Hours-Practice
 
 # ── COMPILE ──────────────────────────────────────────────────
 javac FileName.java
